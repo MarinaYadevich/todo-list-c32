@@ -89,17 +89,13 @@ button:hover {
     margin-top: 10px;
     font-size: 14px;
     color: #2196F3;
-    cursor: pointer;
 }
 
-.switch-form:hover {
+.switch-form a {
+    color: #1976D2;
+    text-decoration: none;
+}
+
+.switch-form a:hover {
     text-decoration: underline;
-}
-
-.form {
-    display: block;
-}
-
-#register-form {
-    display: none;
 }
