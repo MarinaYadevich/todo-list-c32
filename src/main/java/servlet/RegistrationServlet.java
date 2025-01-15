@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
+// This class implements registration of new users.
 @WebServlet("/registration")
 public class RegistrationServlet extends HttpServlet {
 
@@ -16,8 +17,8 @@ public class RegistrationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
 
-        String newUsername = req.getParameter("new-username");
-        String newPassword = req.getParameter("new-password");
+        String newUsername = req.getParameter("username");
+        String newPassword = req.getParameter("password");
 
         if (newUsername == null || newUsername.trim().isEmpty() || newPassword == null || newPassword.trim().isEmpty()) {
             req.setAttribute("error", "Username and password cannot be empty");
