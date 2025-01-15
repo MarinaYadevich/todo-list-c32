@@ -20,4 +20,12 @@ public class UserRepository {
         }
         return false;
     }
+
+    public static boolean addUser(String username, String password) {
+        if (USERS.containsKey(username)) {
+            return false; // Пользователь уже существует
+        }
+        USERS.put(username, password);
+        return true;
+    }
 }
