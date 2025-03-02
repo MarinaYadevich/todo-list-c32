@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="../css/registration.css">
+</head>
+<body id="registration-body">
+    <div id="registration-container">
+        <h1 id="registration-title">Create Account</h1>
+        <p id="registration-subtitle">Register to get started.</p>
+
+        <form id="registration-form" action="registration" method="POST">
+            <label for="new-username">Username:</label>
+            <input type="text" id="new-username" name="username" placeholder="Choose a username" required>
+
+            <label for="new-email">Email:</label>
+            <input type="email" id="new-email" name="email" placeholder="Enter your email" required>
+
+            <label for="new-password">Password:</label>
+            <input type="password" id="new-password" name="password" placeholder="Choose a password" required>
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+
+            <button type="submit" id="button-register">Register</button>
+        </form>
+
+        <p id="switch-to-login">
+            <a href="login.html">Already have an account? Sign In</a>
+        </p>
+    </div>
+</body>
+</html>
