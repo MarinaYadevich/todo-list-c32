@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
         if (isValidUser) {
             HttpSession session = req.getSession();
             session.setAttribute("username", username);
-            req.getRequestDispatcher("/page/todo-list.html").forward(req, resp);
+            req.getRequestDispatcher("/page/todo-list.jsp").forward(req, resp);
         } else {
             req.setAttribute("error", "Invalid username or password");
             try (PrintWriter out = resp.getWriter()) {

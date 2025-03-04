@@ -29,9 +29,10 @@ public class RegistrationServlet extends HttpServlet {
         boolean isUserAdded = UserRepository.addUser(newUsername, newPassword);
 
         if (isUserAdded) {
-            HttpSession session = req.getSession();
-            session.setAttribute("username", newUsername);
-            req.getRequestDispatcher("/page/todo-list.html").forward(req, resp);
+            resp.getWriter().println("Registration successful!");
+//            HttpSession session = req.getSession();
+//            session.setAttribute("username", newUsername);
+//            req.getRequestDispatcher("/page/todo-list.jsp").forward(req, resp);
         } else {
             req.setAttribute("error", "User already exists");
             req.getRequestDispatcher("/registration.html").forward(req, resp);
