@@ -1,44 +1,32 @@
-p {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 20px;
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #2196F3, #8BC34A);
+    font-family: Arial, sans-serif;
 }
 
-button {
-    background-color: #2196F3;
-    color: white;
-    width: 100%;
-    padding: 14px;
-    font-size: 16px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #1976D2;
-}
-
-.header-buttons{
+#header-buttons {
     position: absolute;
     top: 20px;
     right: 20px;
-    display: flex;
-    justify-items: right;
-    gap: 10px;
 }
 
-.profile-photo {
-    width: 100%; /* Чтобы фото занимало всю доступную ширину колонки */
-    max-width: 450px; /* Ограничиваем максимальный размер */
-    border-radius: 15px; /* Скругленные края для красоты */
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Легкая тень */
-    display: block; /* Убираем лишние отступы */
-    margin: 0 auto; /* Центрируем */
+#about-container {
+    max-width: 1200px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.info-container {
-    display: flex;
+#profile-photo {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+#text-block p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.5;
+}

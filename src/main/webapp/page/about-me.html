@@ -3,36 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>About me</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/about-me.css">
 </head>
-<body>
+<body class="d-flex align-items-center justify-content-center">
 
-<div class="header-buttons">
+<div id="header-buttons" class="d-flex gap-3">
     <form action="todo" method="GET">
-        <button type="submit" class="btn btn-success">To-do list page</button>
+        <button type="submit" class="btn btn-light">To-do list page</button>
     </form>
     <form action="logout" method="POST">
         <button type="submit" class="btn btn-danger">Logout</button>
     </form>
 </div>
 
-<div class="container-fluid">
-    <div class="row align-items-center info-container">
-        <div class="col-5 offset-1">
-        <img src="../img/my-photo.jpeg" alt="My photo" class="profile-photo">
+<div id="about-container" class="container">
+    <div class="row align-items-center">
+        <div class="col-md-5">
+            <img src="../img/my-photo.jpeg" alt="My photo" id="profile-photo" class="img-fluid">
         </div>
-        <div class="col-5">
-        <p> Привет! Меня зовут Марина, и я – будущий Java-разработчик! 🚀
-            Сейчас учусь кодить, собираю свой первый To-Do List на Java с сервлетами и Bootstrap (и даже не боюсь базы данных… почти 😅).
-            Балансирую между учебой, ремонтом и семейной жизнью – у меня замечательный муж и чудесная дочь, которые, к счастью, пока не требуют от меня писать код для домашнего быта.
-            В перерывах между программированием люблю читать книги по психологии и развитию – это помогает не сойти с ума от стека ошибок.
-            А ещё обожаю сериалы – идеальный способ расслабиться после очередного дебага.
-            Добро пожаловать на мою страничку! Буду рада общению, советам и просто хорошему коду. 😊</p>
+        <div class="col-md-7" id="text-block">
+            <p> Привет! Меня зовут Марина, и я – будущий Java-разработчик! 🚀
+                Сейчас учусь кодить, собираю свой первый To-Do List на Java с сервлетами и Bootstrap (и даже не боюсь базы данных… почти 😅).
+                Балансирую между учебой, ремонтом и семейной жизнью – у меня замечательный муж и чудесная дочь, которые, к счастью, пока не требуют от меня писать код для домашнего быта.
+                В перерывах между программированием люблю читать книги по психологии и развитию – это помогает не сойти с ума от стека ошибок.
+                А ещё обожаю сериалы – идеальный способ расслабиться после очередного дебага.
+                Добро пожаловать на мою страничку! Буду рада общению, советам и просто хорошему коду. 😊
+            </p>
         </div>
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
