@@ -1,4 +1,3 @@
-/* Общие стили для страницы */
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #eef2f3, #dfe6e9);
@@ -10,12 +9,11 @@ body {
     min-height: 100vh;
 }
 
-.container {
+#todo-container {
     background: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
     width: 90%;
     max-width: 600px;
 }
@@ -24,99 +22,63 @@ h1 {
     text-align: center;
     color: #2c3e50;
     font-size: 28px;
-    margin-bottom: 20px;
 }
 
-/* Стили для кнопок */
-.header-buttons {
+#header-buttons {
     position: absolute;
     top: 10px;
     right: 10px;
-    display: flex;
-    gap: 10px;
 }
 
-button {
-    background-color: #2196F3;
-    color: white;
-    padding: 12px;
+.btn-custom {
+    padding: 10px;
     font-size: 16px;
     border-radius: 6px;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
-button:hover {
-    background-color: #1976D2;
-}
-
-/* Кнопка "Обо мне" */
-.about-btn {
+#button-about-me {
     background-color: #3498db;
 }
-.about-btn:hover {
+#button-about-me:hover {
     background-color: #2980b9;
 }
-
-/* Кнопка "Выйти" */
-.logout-btn {
+#button-logout {
     background-color: #e74c3c;
 }
-.logout-btn:hover {
+#button-logout:hover {
     background-color: #c0392b;
 }
-
-/* Кнопка "Добавить задачу" */
-.add-task-btn {
+#task-btn {
     background-color: #2ecc71;
 }
-.add-task-btn:hover {
+#task-btn:hover {
     background-color: #27ae60;
 }
 
-/* Стили для формы ввода задачи */
-.task-form {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-}
-
 #input-task {
-    flex-grow: 1;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-/* Стили для списка задач */
-.task-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-    width: 100%;
-}
-
-.task-item {
+.list-group-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: #fff;
-    padding: 12px;
     border-radius: 8px;
     margin-bottom: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.task-item .delete-btn {
+.delete-btn {
     background-color: #e74c3c;
     color: white;
-    padding: 6px 12px;
     border: none;
     border-radius: 5px;
+    padding: 6px 12px;
     cursor: pointer;
 }
-.task-item .delete-btn:hover {
+.delete-btn:hover {
     background-color: #c0392b;
 }
