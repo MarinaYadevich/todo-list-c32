@@ -7,7 +7,7 @@
     <link href="../css/to-do.css" rel="stylesheet">
 </head>
 
-<body class="d-flex align-items-center justify-content-center">
+<body id="todo-list-body" class="d-flex align-items-center justify-content-center">
 
 <div id="header-buttons" class="d-flex gap-3">
     <form action="about-me" method="GET">
