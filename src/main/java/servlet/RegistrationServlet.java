@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import repository.UserRepository;
 
 import java.io.IOException;
 
@@ -30,9 +31,9 @@ public class RegistrationServlet extends HttpServlet {
 
         if (isUserAdded) {
             resp.getWriter().println("Registration successful!");
-//            HttpSession session = req.getSession();
-//            session.setAttribute("username", newUsername);
-//            req.getRequestDispatcher("/page/todo-list.jsp").forward(req, resp);
+            HttpSession session = req.getSession();
+            session.setAttribute("username", newUsername);
+            req.getRequestDispatcher("/page/todo-list.jsp").forward(req, resp);
         } else {
             req.setAttribute("error", "User already exists");
             req.getRequestDispatcher("/registration.html").forward(req, resp);

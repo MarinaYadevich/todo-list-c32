@@ -6,9 +6,11 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import repository.UserRepository;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+
 
 // This class implements the login to the application
 @WebServlet("/login")
@@ -28,6 +30,7 @@ public class LoginServlet extends HttpServlet {
         } else {
             req.getRequestDispatcher("/page/todo-list.html").forward(req, resp);
         }
+
     }
 
     @Override
@@ -46,6 +49,8 @@ public class LoginServlet extends HttpServlet {
         if (isValidUser) {
             HttpSession session = req.getSession();
             session.setAttribute("username", username);
+
+
             req.getRequestDispatcher("/page/todo-list.jsp").forward(req, resp);
         } else {
             req.setAttribute("error", "Invalid username or password");

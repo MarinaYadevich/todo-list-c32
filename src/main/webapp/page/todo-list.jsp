@@ -28,18 +28,24 @@
 
     <h2 class="mt-4">Task list:</h2>
 
-    <c:if test="${tasks == null}">
+    <c:if test="${tasks == null || tasks.isEmpty()}">
         <h4 class="text-muted">There are no active tasks!</h4>
     </c:if>
 
-    <ol class="list-group mt-3">
+
+
+    <ul class="list-group mt-3">
         <c:forEach var="task" items="${tasks}">
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 ${task}
-                <button class="delete-btn">✖</button>
+                <form action="todo" method="POST">
+                    <input type="hidden" name="deletedTask" class="delete-btn" value="${task}">
+                    <input type="submit" value="✖" id="delete-btn">
+                </form>
+<%--                <button class="delete-btn">✖</button>--%>
             </li>
         </c:forEach>
-    </ol>
+    </ul>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
