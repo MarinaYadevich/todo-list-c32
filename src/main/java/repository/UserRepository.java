@@ -16,6 +16,7 @@ public class UserRepository {
 
     static { // executed once when the class is loaded
         USERS.put("admin", "admin");
+        USERS.put("user", "user");
         loadUsers();
     }
 
@@ -53,11 +54,16 @@ public class UserRepository {
         return false;
     }
 
-    public static boolean addUser(String username, String password) {
+    public static boolean addUser(String username, String password, String confirmPassword) {
         if (USERS.containsKey(username)) {
             USERS.put(username, password);
             return false; // The user already exists
         }
+
+        if (!password.equals(confirmPassword)) {
+            return false;
+        }
+
         USERS.put(username, password);
         saveUsers();
         return true;

@@ -11,47 +11,33 @@ import repository.UserRepository;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-
 // This class implements the login to the application
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
+    UserRepository userRepository;
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession(false); // Get an existing session without creating a new one
-
-        String username = null;
-        if (session != null) {
-            username = (String) session.getAttribute("username");
-        }
-
-        if (username == null) {
-            req.getRequestDispatcher("/login.html").forward(req, resp);
-        } else {
-            req.getRequestDispatcher("/page/todo-list.html").forward(req, resp);
-        }
-
+    public LoginServlet() {
+        this.userRepository = new UserRepository();
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // Setting the content type
-        resp.setContentType("text/html");
+        //Устанавливаем тип контента
+        resp.setContentType("text/html;charset=UTF-8");
 
-        // We get from the request
+        //Получаем из запроса
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-        // User authentication
-        boolean isValidUser = UserRepository.isValid(username, password);
+        //Аутентификация пользователя
+        boolean isValidUser = false;
+        isValidUser = userRepository.isValid(username, password);
 
-        // Preparing an answer
+        //Готовим ответ
         if (isValidUser) {
             HttpSession session = req.getSession();
             session.setAttribute("username", username);
-
-
-            req.getRequestDispatcher("/page/todo-list.jsp").forward(req, resp);
+            resp.sendRedirect("/todo");
         } else {
             req.setAttribute("error", "Invalid username or password");
             try (PrintWriter out = resp.getWriter()) {
@@ -73,8 +59,18 @@ public class LoginServlet extends HttpServlet {
                 out.println("</body>");
                 out.println("</html>");
 
-               // req.getRequestDispatcher("/login.html").forward(req, resp);
+                // req.getRequestDispatcher("/login.html").forward(req, resp);
             }
+        }
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String username = (String) req.getSession().getAttribute("username");
+        if (username == null) {
+            req.getRequestDispatcher("/login.html").forward(req, resp);
+        } else {
+            req.getRequestDispatcher("/todo").forward(req, resp);
         }
     }
 }

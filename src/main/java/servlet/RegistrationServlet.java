@@ -20,23 +20,25 @@ public class RegistrationServlet extends HttpServlet {
 
         String newUsername = req.getParameter("username");
         String newPassword = req.getParameter("password");
+        String confirmPassword = req.getParameter("confirmPassword");
 
-        if (newUsername == null || newUsername.trim().isEmpty() || newPassword == null || newPassword.trim().isEmpty()) {
-            req.setAttribute("error", "Username and password cannot be empty");
+        if (newUsername == null || newUsername.trim().isEmpty() || newPassword == null || newPassword.trim().isEmpty()
+        || confirmPassword == null || confirmPassword.trim().isEmpty() ) {
+            req.setAttribute("error", "Username or password/confirm password cannot be empty");
             req.getRequestDispatcher("/registration.html").forward(req, resp);
             return;
         }
 
-        boolean isUserAdded = UserRepository.addUser(newUsername, newPassword);
+        boolean isUserAdded = UserRepository.addUser(newUsername, newPassword, confirmPassword);
 
         if (isUserAdded) {
             resp.getWriter().println("Registration successful!");
             HttpSession session = req.getSession();
             session.setAttribute("username", newUsername);
-            req.getRequestDispatcher("/page/todo-list.jsp").forward(req, resp);
+            req.getRequestDispatcher("/WEB-INF/page/todo-list.jsp").forward(req, resp);
         } else {
             req.setAttribute("error", "User already exists");
-            req.getRequestDispatcher("/registration.html").forward(req, resp);
+            req.getRequestDispatcher("/login.html").forward(req, resp);
         }
     }
 }

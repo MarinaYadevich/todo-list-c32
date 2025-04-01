@@ -4,7 +4,7 @@
 <head>
     <title>To-Do List</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/to-do.css" rel="stylesheet">
+    <link href="../../css/to-do.css" rel="stylesheet">
 </head>
 
 <body id="todo-list-body" class="d-flex align-items-center justify-content-center">
