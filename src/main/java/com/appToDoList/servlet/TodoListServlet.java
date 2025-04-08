@@ -1,4 +1,4 @@
-package servlet;
+package com.appToDoList.servlet;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -6,18 +6,21 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import repository.TaskRepository;
+import com.appToDoList.repository.TaskRepository;
 
 import java.io.IOException;
 import java.util.Set;
 
+/**
+ * Servlet for displaying and managing the user's task list.
+ *
+ * Processes requests to add, delete tasks, and display a list of tasks.
+ *
+ * URL: /todo.
+ */
 @WebServlet("/todo")
 public class TodoListServlet extends HttpServlet {
-    private final TaskRepository taskRepository;
-
-    public TodoListServlet() {
-        this.taskRepository = new TaskRepository();
-    }
+    private final TaskRepository taskRepository = new TaskRepository();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -51,7 +54,6 @@ public class TodoListServlet extends HttpServlet {
         }
 
         req.setAttribute("tasks", tasks);
-
         req.getRequestDispatcher("/WEB-INF/page/todo-list.jsp").forward(req, resp);
     }
 }

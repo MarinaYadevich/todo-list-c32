@@ -1,4 +1,3 @@
-/* Общие стили для страницы */
 body {
     min-height: 100vh;
     display: flex;
@@ -10,7 +9,6 @@ body {
     padding: 20px;
 }
 
-/* Контейнер для всего содержимого */
 #about-container {
     display: flex;
     flex-direction: row;
@@ -24,7 +22,6 @@ body {
     animation: fadeIn 0.8s ease-in-out;
 }
 
-/* Фото профиля */
 #profile-photo {
     width: 100%;
     max-width: 300px;
@@ -33,7 +30,6 @@ body {
     margin-right: 30px;
 }
 
-/* Текстовый блок */
 #text-block {
     max-width: 500px;
     text-align: left;
@@ -45,14 +41,12 @@ body {
     line-height: 1.6;
 }
 
-/* Кнопки в верхнем правом углу */
 #header-buttons {
     position: absolute;
     top: 15px;
     right: 15px;
 }
 
-/* Анимация появления */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -62,7 +56,6 @@ body {
     }
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     #about-container {
         flex-direction: column;

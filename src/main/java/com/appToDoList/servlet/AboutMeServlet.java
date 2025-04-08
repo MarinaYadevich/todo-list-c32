@@ -1,4 +1,4 @@
-package servlet;
+package com.appToDoList.servlet;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -8,6 +8,9 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
+/**
+ * Is responsible for displaying the "About Me" page.
+ */
 @WebServlet("/about-me")
 public class AboutMeServlet extends HttpServlet {
     @Override
